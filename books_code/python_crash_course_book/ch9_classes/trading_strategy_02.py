@@ -20,21 +20,31 @@ class TradingStrategy:
 
     def __init__(self, symbol: str, timeframe: str, capital: float) -> None:
         """Initialize strategy attributes."""
+        # core strategy attributes
         self.symbol: str = symbol
         self.timeframe: str = timeframe
         self.capital: float = capital
-        self.total_trades: int = 0    # default attribute
-        self.realized_pnl: float = 0.0  # default attribute
-    
+
+        # default attributes for tracking performance
+        self.total_trades: int = 0
+        self.realized_pnl: float = 0.0
+
+    # methods for strategy information and performance tracking
+    # ─────────────────────────────────────────────────────────
     def get_description(self) -> str:
         """Return a formatted strategy description."""
-        description: str = f"{self.symbol} | {self.timeframe} | ${self.capital}"
+        description: str = f"{self.symbol} | " + \
+                           f"{self.timeframe} | " + \
+                           f"${self.capital}"
         return description
     
     def read_pnl(self) -> None:
         """Print the current realized PnL."""    
         print(f"Realized PnL: ${self.realized_pnl}")
+    # ─────────────────────────────────────────────────────────
 
+    # methods for modifying performance tracking attributes
+    # ──────────────────────────────────────────────────────────────────
     def update_pnl(self, pnl: float) -> None:
         """
         Set the realized PnL to the given value.
@@ -44,7 +54,16 @@ class TradingStrategy:
             self.realized_pnl = pnl
         else:
             print("Warning: PnL rollback detected. Review trade log.")
+    
+    def add_pnl(self, amount: float) -> None:
+        """Add the given PnL amount to the realized PnL."""
+        self.realized_pnl += amount
 
+    def increment_trades(self, count: int) -> None:
+        """Add the given number to the total trade count."""
+        self.total_trades += count
+    # ──────────────────────────────────────────────────────────────────
+    
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # 2.1 Setting a Default Value for an Attribute
@@ -78,6 +97,7 @@ print("")
 print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
 print("2.2 Modifying Attribute Values")
 print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+print(thick_dash)
 print("2.2.1 Modifying an Attribute's Value Directly")
 print("─────────────────────────────────────────────")
 strategy_btcusd.realized_pnl = 25.0
@@ -87,4 +107,11 @@ print("2.2.2 Modifying an Attribute's Value Through a Method")
 print("─────────────────────────────────────────────────────")
 strategy_btcusd.update_pnl(50.0)
 strategy_btcusd.read_pnl()
-print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+print("─────────────────────────────────────────────────────")
+print("2.2.3 Incrementing an Attribute's Value Through a Method")
+print("────────────────────────────────────────────────────────")
+strategy_btcusd.add_pnl(250.0)
+strategy_btcusd.read_pnl()
+strategy_btcusd.increment_trades(3)
+print(f"Total trades executed: {strategy_btcusd.total_trades}")
+print(thick_dash)
