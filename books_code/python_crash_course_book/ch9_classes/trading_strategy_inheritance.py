@@ -79,6 +79,13 @@ class MeanReversionStrategy(TradingStrategy):
         print(f"Lookback Period: {self.lookback_period} periods")
         print(f"Z-Score Threshold: {self.z_score_threshold}")
 
+    def generate_signal(self) -> None:
+        """Override the parent method with mean reversion logic."""
+        print(f"Calculating z-score for {self.symbol} "
+              f"over {self.lookback_period} periods...")
+        print(f"Signal: LONG if z < -{self.z_score_threshold}, "
+              f"SHORT if z > {self.z_score_threshold}")
+
 
 mr_strategy_btcusd: MeanReversionStrategy = MeanReversionStrategy('BTCUSD', '1H', 100)
 
