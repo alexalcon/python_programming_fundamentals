@@ -59,15 +59,35 @@ class TradingStrategy:
         """Add the given PnL amount to the realized PnL."""
         self.realized_pnl += amount
     # ──────────────────────────────────────────────────────────────────
-
-
+    
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 3.1 The __init__() Method for a Child Class
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 class MeanReversionStrategy(TradingStrategy):
     """A mean reversion strategy — specialized TradingStrategy."""
 
     def __init__(self, symbol: str, timeframe: str, capital: float) -> None:
         """Initialize parent attributes, then child-specific ones."""
         super().__init__(symbol, timeframe, capital)
+        
+        # subclass-specific attributes  
+        self.lookback_period: int = 20
+        self.z_score_threshold: float = 2.0 
+
+    def describe_parameters(self) -> None:
+        """Print the strategy's specific parameters."""
+        print(f"Lookback Period: {self.lookback_period} periods")
+        print(f"Z-Score Threshold: {self.z_score_threshold}")
 
 
 mr_strategy_btcusd: MeanReversionStrategy = MeanReversionStrategy('BTCUSD', '1H', 100)
+
+# dashed lines for better readability of output
+thick_dash = "━" * 70 
+thin_dash = "─" * 70 
+
+print(thick_dash)
 print(mr_strategy_btcusd.get_description())
+print(thin_dash)
+mr_strategy_btcusd.describe_parameters()
+print(thick_dash)
