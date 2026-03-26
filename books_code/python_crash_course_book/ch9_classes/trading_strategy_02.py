@@ -35,6 +35,16 @@ class TradingStrategy:
         """Print the current realized PnL."""    
         print(f"Realized PnL: ${self.realized_pnl}")
 
+    def update_pnl(self, pnl: float) -> None:
+        """
+        Set the realized PnL to the given value.
+        Add validation to prevent suspicious resets.
+        """
+        if pnl >= self.realized_pnl:
+            self.realized_pnl = pnl
+        else:
+            print("Warning: PnL rollback detected. Review trade log.")
+
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # 2.1 Setting a Default Value for an Attribute
@@ -60,3 +70,21 @@ print(f"Total trades: {strategy_btcusd.total_trades}")
 strategy_btcusd.read_pnl()
 print(thick_dash)
 print("")
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 2.2 Modifying Attribute Values
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+print("2.2 Modifying Attribute Values")
+print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+print("2.2.1 Modifying an Attribute's Value Directly")
+print("─────────────────────────────────────────────")
+strategy_btcusd.realized_pnl = 25.0
+strategy_btcusd.read_pnl()
+print("─────────────────────────────────────────────")
+print("2.2.2 Modifying an Attribute's Value Through a Method")
+print("─────────────────────────────────────────────────────")
+strategy_btcusd.update_pnl(50.0)
+strategy_btcusd.read_pnl()
+print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
