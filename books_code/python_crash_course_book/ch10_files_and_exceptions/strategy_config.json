@@ -1,0 +1,1 @@
+{"strategy": "momentum", "lookback": 20, "threshold": 1.5, "symbols": ["aapl", "msft", "goog"]}
