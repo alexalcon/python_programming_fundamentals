@@ -1,0 +1,29 @@
+[
+    {
+        "symbol": "AAPL",
+        "days": 20,
+        "latest_price": 144.15,
+        "min_price": 140.29,
+        "max_price": 157.09,
+        "total_return": -0.052,
+        "avg_daily_return": -0.001323
+    },
+    {
+        "symbol": "MSFT",
+        "days": 20,
+        "latest_price": 149.4,
+        "min_price": 140.42,
+        "max_price": 158.67,
+        "total_return": 0.0577,
+        "avg_daily_return": 0.004535
+    },
+    {
+        "symbol": "GOOG",
+        "days": 20,
+        "latest_price": 157.55,
+        "min_price": 140.03,
+        "max_price": 159.75,
+        "total_return": 0.0189,
+        "avg_daily_return": 0.003272
+    }
+]
