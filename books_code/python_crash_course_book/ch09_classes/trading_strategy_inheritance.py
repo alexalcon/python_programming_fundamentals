@@ -113,7 +113,7 @@ class MeanReversionStrategy(TradingStrategy):
         """Initialize parent attributes, then child-specific ones."""
         super().__init__(symbol, timeframe, capital)
         
-        # subclass-specific attributes  
+        # subclass-specific default attributes  
         self.lookback_period: int = 20
         self.z_score_threshold: float = 2.0 
 
