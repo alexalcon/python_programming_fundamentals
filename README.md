@@ -55,7 +55,7 @@
   <strong>Python Programming Fundamentals</strong> is a personal learning repository that builds Python skills step by step, from the first loop to multi-module programs, with every concept anchored in the world of algorithmic trading.
   </p>
   <p align="center">
-  It brings together three complementary tracks: book exercises from <em>Python Crash Course</em> (lists, dictionaries, functions, classes, files and exceptions), structured programming drills (numerical sequences, nested control flow and 2D matrix patterns), and standalone concept demos. Every script runs on its own with nothing more than the Python standard library.
+  It brings together three complementary tracks: book exercises from <a href="https://www.oreilly.com/library/view/python-crash-course/9781098156664/"><em>Python Crash Course (3rd Edition)</em></a> (lists, dictionaries, functions, classes, files and exceptions), structured programming drills (numerical sequences, nested control flow and 2D matrix patterns), and standalone concept demos. Every script runs on its own with nothing more than the Python standard library.
   </p>
   <p align="center">
   Instead of generic examples, orders, tickers, strategies, risk managers and portfolios are the vocabulary of every exercise. The goal is simple: the fundamentals learned here should transfer directly to real quantitative trading work.
@@ -108,7 +108,7 @@ The general objective of this project is to develop a structured collection of P
 
 The effort is justified first by its audience: the author, and any other beginner who wants to reach quantitative trading with a solid programming base rather than copied snippets. It also applies concrete knowledge instead of just listing topics: counter- and sentinel-controlled iteration, list and dictionary manipulation, positional and keyword arguments with `*args` and `**kwargs`, module imports, class and instance attributes, inheritance, composition, class methods with `cls`, file I/O with JSON persistence and exception handling.
 
-The project has clear limits. It is strictly educational and is **not** production trading code: there is no live market data, no broker or exchange API, no real order execution and no financial advice. Prices and P&L figures are illustrative, and the code deliberately stays within the Python standard library so that the language itself, not third-party frameworks, remains the focus. Within those limits, the project has so far produced 78 standalone scripts: 45 structured programming exercises, 29 book exercises covering *Python Crash Course* chapters 3, 4, 6, 8, 9 and 10 (including full trading system demos for chapters 8, 9 and 10), and 4 standalone concept examples.
+The project has clear limits. It is strictly educational and is **not** production trading code: there is no live market data, no broker or exchange API, no real order execution and no financial advice. Prices and P&L figures are illustrative, and the code deliberately stays within the Python standard library so that the language itself, not third-party frameworks, remains the focus. Within those limits, the project has so far produced standalone scripts from <a href="https://www.oreilly.com/library/view/python-crash-course/9781098156664/"><em>Python Crash Course (3rd Edition)</em></a> book's exercises, covering chapters 3, 4, 6, 8, 9 and 10 (including full trading system demos for chapters 8, 9 and 10).
 
 <!-- ──────────────────────────────────────────────────────────────────────────── -->
 <!-- The sections below (Built With to Usage) are intentionally left for the      -->
@@ -117,21 +117,70 @@ The project has clear limits. It is strictly educational and is **not** producti
 
 ### Built With
 
-<!-- left for the maintainer: list the technologies used in the project -->
+- **Python 3** - the primary language used across all exercises, demos and mini-projects.
+- **Python Standard Library** - the repository is intentionally built around stdlib-only modules, including `random` for simulated trading behavior, `pathlib` for file handling, `json` for persistence examples and `math` for numerical exercises.
+- **Object-Oriented Python** - class-based examples model trading strategies, portfolios and risk-management components in the Chapter 9 materials.
 
 ## Getting Started
 
 ### Prerequisites
 
-<!-- left for the maintainer: list the project requirements/dependencies -->
+Before running the exercises in this repository, make sure you have:
+
+- **Python 3** installed and available in your terminal.
+  - You can also setup and activate a virtual environment to manage dependencies and isolate the project. A conda environment is used for this project though, and it is recommended to activate it before running any scripts, especially if you have multiple Python versions installed.
+- **Git** installed if you want to clone the repository locally.
+- A code editor or IDE such as **VS Code** for browsing and running the scripts more comfortably.
+
+This project uses the **Python standard library only** for its core learning materials, so there are no required third-party packages to install.
 
 ### Installation
 
-<!-- left for the maintainer: describe how to install and get started with the project -->
+1. Clone the repository:
+
+```bash
+git clone https://github.com/alexalcon/python_programming_fundamentals.git
+```
+
+2. Move into the project folder:
+
+```bash
+cd python_programming_fundamentals
+```
+
+3. Verify that Python 3 is available (according to the prefered development environment setup configuration, whether using a local installation or your activated environment):
+
+```bash
+conda activate <your-environment-name>
+python --version
+```
 
 ## Usage
 
-<!-- left for the maintainer: describe how to use the project, with use cases and code examples -->
+Start running any standalone script directly. For example:
+
+```bash
+python3 books_code/python_crash_course_book/ch03_introducing_lists/trading_lists_demo.py
+```
+
+Most scripts in this repository can be run directly from the project root with `python3 <path-to-script>.py`.
+
+The main exception is the Chapter 8 multi-file demo, which should be run from inside its own folder so the local import resolves correctly:
+
+```bash
+cd books_code/python_crash_course_book/ch08_functions/full_trading_system
+python3 trading_functions_demo.py
+```
+
+<div style="
+    padding: 12px 16px;
+    border-left: 5px solid #2f80ed;
+    background-color: #eef6ff;
+    border-radius: 6px;
+    margin: 12px 0;
+">
+    <strong>Note:</strong> Although this repository mainly uses the Python standard library, it is still recommended to run the code inside a proper virtual environment or Conda environment to keep your Python setup isolated, avoid package conflicts, and maintain a clean workspace while learning and experimenting. Thus run the python scripts using the activated environment.
+</div>
 
 ## Roadmap
 
@@ -189,5 +238,6 @@ See [LICENSE](LICENSE) for more information.
 
 ## Acknowledgements
 
-- **Eric Matthes**, author of [*Python Crash Course*](https://nostarch.com/python-crash-course-3rd-edition) (No Starch Press), whose chapter structure shapes the `books_code/python_crash_course_book/` track of this repository.
-- **David Kopec**, author of [*Classic Computer Science Problems in Python*](https://www.manning.com/books/classic-computer-science-problems-in-python) (Manning), the reference for the upcoming `books_code/classic_computer_science_problems_in_python_book/` track.
+The Python code knowledge was primarily gained and structured from the following resources:
+
+- **Eric Matthes**, author of [*Python Crash Course (3rd Edition)*](https://www.oreilly.com/library/view/python-crash-course/9781098156664/), whose chapter structure shapes the `books_code/python_crash_course_book/` track of this repository.
