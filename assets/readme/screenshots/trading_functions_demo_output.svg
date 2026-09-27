@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" font-family="Consolas, Menlo, 'DejaVu Sans Mono', monospace" font-size="16">
+  <rect width="900" height="560" rx="12" fill="#1e1e2e"/>
+  <rect width="900" height="36" rx="12" fill="#2a2a3d"/>
+  <rect y="24" width="900" height="12" fill="#2a2a3d"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f56"/>
+  <circle cx="42" cy="18" r="6" fill="#ffbd2e"/>
+  <circle cx="62" cy="18" r="6" fill="#27c93f"/>
+  <text x="450" y="23" text-anchor="middle" font-size="13" fill="#a6accd">ch08_functions/full_trading_system</text>
+
+  <g fill="#cdd6f4">
+    <text x="24" y="70"><tspan fill="#a6e3a1">$</tspan> python trading_functions_demo.py</text>
+    <text x="24" y="100">Market is open. Ready to trade.</text>
+    <text x="24" y="130"><tspan fill="#89b4fa">ORDER:</tspan> BUY 100 units of AAPL</text>
+    <text x="24" y="152"><tspan fill="#89b4fa">ORDER:</tspan> SELL 50 units of MSFT</text>
+    <text x="24" y="174"><tspan fill="#89b4fa">ORDER:</tspan> BUY 150 units of GOOG</text>
+    <text x="24" y="204">Ticker 1: BINANCE:BTCUSDT</text>
+    <text x="24" y="226">Ticker 2: BINANCE:ETHUSDT (CRYPTO)</text>
+    <text x="24" y="256">Processing orders:</text>
+    <text x="24" y="278">  Executed: BUY 150 GOOG -&gt; PnL: <tspan fill="#a6e3a1">$700</tspan></text>
+    <text x="24" y="300">  Executed: SELL 50 MSFT -&gt; PnL: <tspan fill="#a6e3a1">$198</tspan></text>
+    <text x="24" y="322">  Executed: BUY 100 AAPL -&gt; PnL: <tspan fill="#a6e3a1">$820</tspan></text>
+    <text x="24" y="352" fill="#f9e2af">--- Execution Report ---</text>
+    <text x="24" y="374">  BUY 150 GOOG: $700</text>
+    <text x="24" y="396">  SELL 50 MSFT: $198</text>
+    <text x="24" y="418">  BUY 100 AAPL: $820</text>
+    <text x="24" y="440">  Total PnL: <tspan fill="#a6e3a1" font-weight="700">$1718</tspan></text>
+    <text x="24" y="470">Watchlist 'tech' portfolio:</text>
+    <text x="24" y="492">  + AAPL  + MSFT  + GOOG  + NVDA</text>
+    <text x="24" y="522" fill="#7f849c">Pending queue after execution: []</text>
+  </g>
+</svg>
