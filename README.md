@@ -75,8 +75,7 @@
 <!-- header: table of contents -->
 <!-- ───────────────────────── -->
 ## Table of Contents
-<!-- body -->
-- [About](#about)
+- [About](#about) <!-- body -->
   - [Built With](#built-with)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
@@ -85,8 +84,7 @@
 - [Roadmap](#roadmap)
 - [Support](#support)
 - [Project assistance](#project-assistance)
-<!-- footer -->
-- [Contributing](#contributing)
+- [Contributing](#contributing) <!-- footer -->
 - [Authors & contributors](#authors--contributors)
 - [Security](#security)
 - [License](#license)
@@ -196,6 +194,7 @@ Reach out to the maintainer at one of the following places:
 
 - [GitHub issues](https://github.com/alexalcon/python_programming_fundamentals/issues/new?assignees=&labels=question&template=04_SUPPORT_QUESTION.md&title=support%3A+)
 - Contact options listed on [this GitHub profile](https://github.com/alexalcon)
+- [LinkedIn](https://www.linkedin.com/in/alex-alcón)
 
 ## Project assistance
 
